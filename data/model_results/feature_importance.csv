@@ -1,0 +1,16 @@
+feature,importance
+total_melody_duration,0.038062770756063215
+min_note_duration,0.037559023979607836
+max_note_duration,0.037041169331417316
+note_density,0.03591864866744474
+mean_note_duration,0.035012704086820494
+key_root_pitch_class,0.03314120594535303
+pitch_class_D,0.027810532104676197
+std_note_duration,0.02526916909548945
+pitch_class_B,0.024999458614809685
+pitch_class_entropy,0.02456332918921766
+pitch_class_relative_to_key_C,0.02430806967880827
+pitch_class_relative_to_key_G,0.02293351791312108
+pitch_class_G,0.022859980820680217
+pitch_class_relative_to_key_D,0.022269203871731813
+pitch_class_E,0.02185224895052374

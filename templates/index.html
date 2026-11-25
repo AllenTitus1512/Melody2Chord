@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upload a vocal melody recording for Melody2Chord audio analysis.">
+  <title>Melody2Chord | Vocal Melody Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v='upload-debug-1') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">✦ Vocal melody workspace</p><h1 id="page-title">Melody<span>2</span>Chord</h1>
+      <p class="subtitle">AI-Based Guitar Chord Generation from Vocal Melodies</p>
+      <p class="intro">Start with a vocal recording. Melody2Chord securely uploads it and reads its basic audio properties, preparing the foundation for melody analysis in the next stage.</p>
+    </section>
+    <section class="workspace-card" aria-labelledby="upload-title">
+      <div class="card-heading"><div><p class="section-kicker">Stage 1 · Audio intake</p><h2 id="upload-title">Bring in your melody</h2></div><span class="format-badge">WAV / MP3</span></div>
+      <form id="upload-form" novalidate><input id="audio-file" name="audio" type="file" accept="audio/wav,audio/mpeg,.wav,.mp3" hidden>
+        <label class="drop-zone" id="drop-zone" for="audio-file"><span class="upload-icon" aria-hidden="true">♫</span><span class="drop-title">Drop your vocal recording here</span><span class="drop-copy">or choose a file from your device · maximum 50 MB</span><span class="browse-button">Browse audio</span></label>
+        <p id="selected-file" class="selected-file" aria-live="polite">No audio file selected.</p>
+        <div class="actions"><button id="analyze-button" type="submit" disabled><span class="button-label">Upload &amp; analyze</span><span class="button-loader" aria-hidden="true"></span></button><p id="status-message" class="status-message" role="status" aria-live="polite">Upload a vocal recording to begin.</p></div>
+      </form>
+      <section id="result-panel" class="result-panel" hidden aria-labelledby="audio-details-title">
+        <div class="result-heading"><div><p class="section-kicker">Audio ready</p><h3 id="audio-details-title">Recording details</h3></div><span class="ready-dot">Ready</span></div>
+        <audio id="audio-preview" controls preload="metadata"></audio>
+        <dl class="audio-details"><div><dt>File name</dt><dd id="result-filename">—</dd></div><div><dt>Duration</dt><dd id="result-duration">—</dd></div><div><dt>Sampling rate</dt><dd id="result-rate">—</dd></div></dl>
+      </section>
+      <section id="melody-panel" class="melody-panel" hidden aria-labelledby="melody-title">
+        <div class="result-heading"><div><p class="section-kicker">Melody analysis</p><h3 id="melody-title">Extract your vocal melody</h3></div></div>
+        <p class="melody-copy">Detect stable voiced notes from the uploaded recording.</p>
+        <div class="melody-actions"><button id="extract-button" type="button"><span class="button-label">Extract Melody</span><span class="button-loader" aria-hidden="true"></span></button><p id="melody-status" class="status-message" role="status" aria-live="polite">Ready when you are.</p></div>
+        <div id="melody-results" class="melody-results" hidden><p class="section-kicker">Detected notes</p><div id="note-list" class="note-list" aria-label="Detected musical notes"></div><div class="melody-summary"><span id="note-count">0 notes detected</span><span id="melody-duration">Melody duration: 0.00 seconds</span></div><div class="timeline-wrap"><table><thead><tr><th>Start</th><th>End</th><th>Note</th><th>Frequency</th></tr></thead><tbody id="timeline-body"></tbody></table></div></div>
+      </section>
+      <section id="key-panel" class="key-panel" hidden aria-labelledby="key-title">
+        <div class="result-heading"><div><p class="section-kicker">Key analysis</p><h3 id="key-title">Find your musical key</h3></div></div>
+        <p class="melody-copy">Detect the most likely major or minor key from the extracted vocal melody.</p>
+        <div class="melody-actions"><button id="detect-key-button" type="button"><span class="button-label">Detect Key</span><span class="button-loader" aria-hidden="true"></span></button><p id="key-status" class="status-message" role="status" aria-live="polite">Extract a melody to continue.</p></div>
+        <div id="key-results" class="key-results" hidden><div class="key-metrics"><div><span>Detected key</span><strong id="detected-key">—</strong></div></div><p class="section-kicker">Scale notes</p><div id="scale-notes" class="note-list" aria-label="Detected key scale notes"></div></div>
+      </section>
+      <section id="chord-panel" class="chord-panel" aria-labelledby="chord-title">
+        <div class="result-heading"><div><p class="section-kicker">CHORD GENERATION</p><h3 id="chord-title">Generate your chord sheet</h3></div></div>
+        <p class="melody-copy">Generate likely guitar chords from your vocal melody.</p>
+        <div class="melody-actions"><button id="generate-sheet-button" type="button"><span class="button-label">Generate Chord Sheet</span><span class="button-loader" aria-hidden="true"></span></button><p id="chord-status" class="status-message" role="status" aria-live="polite">Upload a vocal recording to begin.</p></div>
+        <div id="chord-results" class="chord-results" hidden>
+          <p class="section-kicker">CHORD SHEET</p>
+          <div id="lyrics-chord-sheet" class="chord-sheet" aria-label="Lyrics with predicted chords above aligned words"></div>
+          <p class="next-stage-note">Chord suggestions are model-generated; multiple harmonizations may be possible.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='js/script.js', v='upload-debug-1') }}"></script>
+</body>
+</html>

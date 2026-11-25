@@ -1,0 +1,6 @@
+MODEL COMPARISON
+
+Model                  Accuracy   Balanced Acc   Macro F1   Weighted F1
+Random Forest V1         0.4853         0.4007     0.4002        0.4849
+Random Forest V2         0.4893         0.4027     0.4022        0.4876
+LSTM                     0.5085         0.4312     0.4274        0.5128

@@ -1,0 +1,20 @@
+LSTM test-set classification report (unseen songs only)
+
+              precision    recall  f1-score   support
+
+           A       0.66      0.64      0.65       840
+          Am       0.44      0.35      0.39       655
+          Bm       0.41      0.57      0.48       609
+           C       0.52      0.46      0.49       813
+          C7       0.00      0.00      0.00         3
+           D       0.54      0.49      0.51       873
+          Dm       0.47      0.59      0.52       486
+           E       0.71      0.63      0.67       710
+          Em       0.38      0.52      0.44       540
+           F       0.58      0.61      0.60       707
+           G       0.50      0.31      0.38       978
+          G7       0.00      0.00      0.00         2
+
+    accuracy                           0.51      7216
+   macro avg       0.43      0.43      0.43      7216
+weighted avg       0.53      0.51      0.51      7216

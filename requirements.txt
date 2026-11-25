@@ -1,0 +1,14 @@
+﻿Flask
+librosa
+numpy
+scipy
+scikit-learn
+joblib
+matplotlib
+pandas
+pretty_midi
+tensorflow==2.22.0rc0
+faster-whisper==1.2.1
+av<19
+uroman==1.3.1.1
+urdunlp @ git+https://github.com/hammasbuilds/urdunlp.git@7315b3e8766c9c8a20249dfeb8e1b2f730090c05

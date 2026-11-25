@@ -1,0 +1,62 @@
+{
+  "model_type": "RandomForestClassifier",
+  "feature_names": [
+    "pitch_class_C",
+    "pitch_class_Csharp",
+    "pitch_class_D",
+    "pitch_class_Dsharp",
+    "pitch_class_E",
+    "pitch_class_F",
+    "pitch_class_Fsharp",
+    "pitch_class_G",
+    "pitch_class_Gsharp",
+    "pitch_class_A",
+    "pitch_class_Asharp",
+    "pitch_class_B",
+    "mean_frequency",
+    "std_frequency",
+    "min_frequency",
+    "max_frequency",
+    "mean_midi_pitch",
+    "std_midi_pitch",
+    "min_midi_pitch",
+    "max_midi_pitch",
+    "note_count",
+    "total_melody_duration",
+    "mean_note_duration",
+    "std_note_duration",
+    "min_note_duration",
+    "max_note_duration",
+    "mean_interval",
+    "std_interval",
+    "min_interval",
+    "max_interval",
+    "mean_absolute_interval",
+    "ascending_interval_proportion",
+    "descending_interval_proportion",
+    "repeated_note_proportion",
+    "key_root_pitch_class",
+    "key_mode"
+  ],
+  "chord_classes": [
+    "A",
+    "Am",
+    "Bm",
+    "C",
+    "C7",
+    "D",
+    "Dm",
+    "E",
+    "Em",
+    "F",
+    "G",
+    "G7"
+  ],
+  "key_encoding": {
+    "key_root_pitch_class": "C=0, C#=1, ..., B=11",
+    "key_mode": {
+      "major": 0,
+      "minor": 1
+    }
+  }
+}
